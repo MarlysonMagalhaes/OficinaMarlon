@@ -8,15 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.main-nav .nav-link');
 
     if (toggle && nav) {
-
-        // abre/fecha ao clicar no botão
         toggle.addEventListener('click', () => {
             const isOpen = toggle.classList.toggle('open');
             nav.classList.toggle('open');
             toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // fecha o menu ao clicar em um link
         links.forEach(link => {
             link.addEventListener('click', () => {
                 toggle.classList.remove('open');
@@ -28,17 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ============================
-       WHATSAPP — PUXAR O NOME AUTOMATICAMENTE
+       WHATSAPP DINÂMICO
     ============================ */
     const btnWhatsApp = document.getElementById("btnWhatsApp");
-    const inputNome = document.getElementById("nome"); // campo onde o cliente digita o nome
 
     if (btnWhatsApp) {
-        btnWhatsApp.addEventListener("click", function (e) {
-            e.preventDefault(); // impede abrir antes de montar a mensagem
+        btnWhatsApp.addEventListener("click", (e) => {
+            e.preventDefault();
 
             const numero = "5592999117211";
-            const nome = inputNome ? inputNome.value.trim() : "";
+
+            // tenta localizar o nome em qualquer lugar da página
+            let nome = "";
+
+            const input1 = document.getElementById("nome");
+            const input2 = document.querySelector("input[name='nome']");
+            const input3 = document.querySelector("input[placeholder*='Nome'], input[placeholder*='nome']");
+
+            if (input1 && input1.value.trim() !== "") nome = input1.value.trim();
+            else if (input2 && input2.value.trim() !== "") nome = input2.value.trim();
+            else if (input3 && input3.value.trim() !== "") nome = input3.value.trim();
 
             const texto = nome
                 ? `Olá ${nome}! Gostaria de solicitar um orçamento sem compromisso.`
