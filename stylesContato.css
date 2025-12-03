@@ -409,7 +409,7 @@ body {
   font-size: 1rem;
   letter-spacing: 1px;
 
-  background: url('./footer.png') center/cover no-repeat;
+  background: url('footer.png') center/cover no-repeat;
   background-attachment: fixed; /* mais elegante no desktop */
   position: relative;
   overflow: hidden;
@@ -519,3 +519,4 @@ body {
     opacity: 0.9;
   }
 }
+
