@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <link rel="stylesheet" href="stylesComentarios.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <header class="top-header">
+      <div class="nav-inner">
+        <a href="./index.html" class="logo-link">
+          <img id="logo" src="./logo01.png" alt="Oficina Marlon">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./Contato.html" target="_blank" class="nav-link">Contato</a></li>
+            <li><a href="./fotos.html" target="_blank" class="nav-link">Fotos</a></li>
+            <li><a href="./comentarios.html" class="nav-link active">Comentários</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> 
+
+    <!-- ===== SEÇÃO COMENTÁRIOS ===== -->
+    <main class="comentarios-container">
+        <h1 class="comentarios-title">COMENTÁRIOS DE CLIENTES</h1>
+        <p class="comentarios-subtitle">
+            Veja o que os clientes estão dizendo sobre o serviço da Oficina Marlon.
+        </p>
+
+        <!-- LISTA VAZIA (será preenchida via JSON) -->
+        <section class="comentarios-lista"></section>
+
+        <!-- FORMULÁRIO (visual) -->
+        <section class="comentario-form-section">
+            <h2 class="comentario-form-title">Deixe seu comentário</h2>
+
+            <form class="comentario-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" placeholder="Seu nome" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Comentário</label>
+                    <textarea id="mensagem" rows="4" placeholder="Descreva sua experiência com a oficina"></textarea>
+                </div>
+
+                <div class="rating-options">
+    <span data-rating="1">⭐</span>
+    <span data-rating="2">⭐⭐</span>
+    <span data-rating="3">⭐⭐⭐</span>
+    <span data-rating="4">⭐⭐⭐⭐</span>
+    <span data-rating="5">⭐⭐⭐⭐⭐</span>
+</div>
+
+                <button type="button" class="btn-enviar">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar comentário
+                </button>
+
+                <!-- <p class="form-info">
+                    * Envio real pode ser integrado ao WhatsApp, e-mail ou banco de dados futuramente.
+                </p> -->
+            </form>
+        </section>
+    </main>
+
+    <!-- ===== MODAL DE CONFIRMAÇÃO ===== -->
+<div id="modal-confirmacao" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fechar aviso">&times;</button>
+
+    <h3 class="modal-title">Comentário enviado!</h3>
+    <p class="modal-text">
+      Seu comentário foi enviado e será postado em breve. Obrigado pela confiança na Oficina Marlon.
+    </p>
+
+    <button class="modal-ok">Ok, entendi</button>
+  </div>
+</div>
+
+    <!-- FOOTER -->
+    <footer class="footer-comentarios">
+        <span class="footer-copy">© Oficina Marlon — Todos os direitos reservados.</span>
+    </footer>
+
+    <!-- JS -->
+    <script src="./comentarios.js"></script>
+
+
+</body>
+</html>

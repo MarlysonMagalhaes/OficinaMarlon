@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina Marlon</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="./styles2.0.css">
+</head>
+<body>
+   
+   <header class="top-header">
+      <div class="nav-inner">
+        <a href="./index.html" class="logo-link">
+          <img id="logo" src="./logo01.png" alt="Oficina Marlon">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./Contato.html" target="_blank" class="nav-link">Contato</a></li>
+            <li><a href="./fotos.html" target="_blank" class="nav-link">Fotos</a></li>
+            <li><a href="./comentarios.html" target="_blank" class="nav-link">Comentários</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> 
+
+    <!-- BANNER PRINCIPAL -->
+    <div id="banner">
+        <div class="banner-content">
+            <div class="banner-description">
+                Para um serviço de qualidade, durabilidade e garantia você só encontra aqui, na Oficina Marlon.<br>Localizado na Av. Açaizeiros, Nº 2408
+            </div>
+
+            <a class="banner-btn" href="https://wa.me/...">Solicitar Orçamento</a>
+        </div>
+    </div>
+
+    <!-- TRAILER MOBILE (bloco original - será ocultado no desktop via CSS) -->
+    <div id="trailer-container" class="trailer-mobile">
+        <div class="content">
+            <video class="trailer" controls>
+                <source src="./trailer.mp4" type="video/mp4">
+                Seu navegador não possui suporte para vídeos.
+            </video>
+
+            <div id="sinopse" class="sinopse-mobile">
+                <p class="description">
+                    ...
+                </p>
+                <a class="button" href="https://wa.me/..." target="_blank" rel="noreferrer noopener">
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOCO DO VÍDEO + TEXTO (VERSÃO DESKTOP) -->
+    <div id="trailer-container-desktop" class="trailer-desktop">
+        <div class="content">
+            <video controls class="trailer">
+                <source src="./midia/trailer.mp4" type="video/mp4">
+                Seu navegador não possui suporte para vídeos.
+            </video>
+
+            <div id="sinopse-desktop" class="sinopse-desktop">
+                <p class="description">
+                    Localizada no Grande Vitória, Av. Açaizeiros, Nº 2408.
+                </p>
+
+                <a class="button" href="https://maps.app.goo.gl/kgdEyKPRKJBbRe9CA"
+                   target="_blank" rel="noreferrer noopener">
+                    Localização
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARDS DE SERVIÇOS -->
+    <div class="actor-cards-container">
+      <div class="cards-content">
+        <div class="card banner-1"><span class="card-title">Pintura</span></div>
+        <div class="card banner-2"><span class="card-title">Funilaria</span></div>
+        <div class="card banner-3"><span class="card-title">Polimento</span></div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <img id="footer-logo" src="./logo01.png" alt="Oficina Marlon">
+
+            <div class="footer-text">
+                <span>Todos os direitos reservados &copy;</span>
+                <span>Desenvolvido por Meiau Code</span>
+            </div>
+        </div>
+
+        <nav class="footer-navigation">
+            <ul class="footer-list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Contato.html" target="_blank">Contato</a></li>
+                <li><a href="./fotos.html" target="_blank">Fotos</a></li>
+                <li><a href="./comentarios.html" target="_blank">Comentários</a></li>
+            <li>
+                <a href="https://www.instagram.com/marlysonssilva?igsh=MXdvNnV2dWt6dG1ybQ==" target="_blank" rel="noopener noreferrer" class="footer-instagram">
+                    <img src="./logo.insta.footer.png" alt="Instagram" class="footer-instagram-icon">
+                    Instagram
+                </a>
+            </li>            
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- JS no final do body -->
+    <script src="./script.js"></script>
+</body>
+</html>

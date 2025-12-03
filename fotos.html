@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos</title>
+    <link rel="stylesheet" href="stylesFotos.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <header class="top-header">
+      <div class="nav-inner">
+        <a href="./index.html" class="logo-link">
+          <img id="logo" src="./logo01.png" alt="Oficina Marlon">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./Contato.html" target="_blank" class="nav-link">Contato</a></li>
+            <li><a href="./fotos.html" class="nav-link active">Fotos</a></li>
+            <li><a href="./comentarios.html" target="_blank" class="nav-link">Comentários</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> 
+
+
+    <!-- ===== GALERIA ===== -->
+    <section class="galeria-container">
+        <h1 class="galeria-title">GALERIA DE FOTOS</h1>
+
+       <!-- ===== FILTROS ===== -->
+    <div class="filtros-container">
+        <button class="filtro-btn active" data-filter="todos">Todos</button>
+        <button class="filtro-btn" data-filter="funilaria">Funilaria</button>
+        <button class="filtro-btn" data-filter="pintura">Pintura</button>
+        <button class="filtro-btn" data-filter="polimento">Polimento</button>
+        <button class="filtro-btn" data-filter="antes-depois">Antes e Depois</button>
+    </div>
+
+    <!-- ===== GRID ===== -->
+    <div class="galeria-grid">
+
+        <!-- EXEMPLOS — troque pelos seus -->
+        <img src="./funilaria.jpg"  data-cat="funilaria" alt="">
+        <img src="./pintura.jpg"  data-cat="pintura" alt="">
+        <img src="./polimento.jpg"  data-cat="polimento" alt="">
+        <img src="./antes e depois.png"  data-cat="antes-depois" alt="">
+        <img src="./funilaria1.jpg"  data-cat="funilaria" alt="">
+        <img src="./pintura1.jpg"  data-cat="pintura" alt="">
+        
+    </div>
+    </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" src="">
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-marlon">
+        <span class="footer-copy">© Oficina Marlon — Todos os direitos reservados.</span>
+    </footer>
+
+    <script src="./Fotos.js"></script>
+
+</body>
+</html>

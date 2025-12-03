@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="stylesContato.css">
+
+    <!-- Font Awesome (opcional para os ícones) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <header class="top-header">
+      <div class="nav-inner">
+        <a href="./index.html" class="logo-link">
+          <img id="logo" src="./logo01.png" alt="Oficina Marlon">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./Contato.html" target="_blank" class="nav-link">Contato</a></li>
+            <li><a href="./fotos.html" target="_blank" class="nav-link">Fotos</a></li>
+            <li><a href="./comentarios.html" target="_blank" class="nav-link">Comentários</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> 
+
+    <!-- ===== CARD DE CONTATO ===== -->
+    <section class="contato-container">
+        <div class="contact-card">
+            <div class="contact-card__title">CLIQUE</div>
+            <div class="contact-card__divider"></div>
+
+            <div class="contact-grid">
+
+                <!-- TELEFONE -->
+                <a class="contact-item" href="tel:+5592999117211">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="contact-label">Telefone</span>
+                </a>
+
+                <!-- WHATSAPP -->
+                <a class="contact-item" href="https://wa.me/5592999117211?text=assim%20que%20estiver%20dispon%C3%ADvel%20responderei.
+" target="_blank" rel="noopener">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="contact-label">WhatsApp</span>
+                </a>
+
+                <!-- EMAIL -->
+                <a class="contact-item" href="mailto:oficinamarlon.gv@gmail.com?subject=cota%C3%A7%C3%A3o&body=solicite%20agora%20mesmo%20seu%20or%C3%A7amento">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="contact-label">E-mail</span>
+                </a>
+
+                <!-- SITE -->
+                <a class="contact-item" href="http://127.0.0.1:5500/index.html" target="_blank" rel="noopener">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <span class="contact-label">Web Site</span>
+                </a>
+
+                <!-- SERVIÇOS -->
+                <!-- <a class="contact-item" href="./servicos.html">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <span class="contact-label">Serviços</span>
+                </a> -->
+
+                <!-- LOCALIZAÇÃO -->
+                <a class="contact-item" href="https://maps.app.goo.gl/D7aUUamhWj7qTVeJA" target="_blank" rel="noopener">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="contact-label">Localização</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+  <!-- ===== FOOTER ===== -->
+<footer class="footer-marlon">
+    <span class="footer-copy">© Oficina Marlon — Todos os direitos reservados.</span>
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

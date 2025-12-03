@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+/* =========================
+   BASE
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+/* logo */
+#logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* nav desktop */
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link,
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* linha amarela racing */
+.nav-link::after,
+.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* link ativo */
+.nav-link.active {
+    color: #ffcc00;
+}
+
+/* botão hamburguer (mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffcc00;
+    border-radius: 8px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+/* animação do X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================
+   NAV MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .top-header {
+        height: 60px;
+        padding: 0 8px;
+        overflow: hidden;
+    }
+
+    #logo {
+        height: 38px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #000;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+        display: none;
+        width: 100vw;
+        flex: none;
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 18px 16px 24px;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .top-header {
+        padding: 0 6px;
+    }
+
+    #logo {
+        height: 34px;
+    }
+
+    .menu-toggle {
+        width: 26px;
+        height: 26px;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+    }
+}
+
+
+/* =========================
+   DESKTOP 1200PX+
+   ========================= */
+
+@media (min-width: 1200px) {
+
+    body {
+        background: radial-gradient(circle at top, #111 0, #000 45%, #000 100%);
+    }
+
+    .top-header {
+        height: 80px;
+    }
+
+    .nav-inner {
+        max-width: 1200px;
+        padding: 0 32px;
+    }
+
+    #logo {
+        height: 60px;
+    }
+
+    .main-nav ul {
+        gap: 40px;
+    }
+
+    .nav-link {
+        font-size: 1.05rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* =========================
+   SEÇÃO COMENTÁRIOS
+   ========================= */
+
+.comentarios-container {
+    max-width: 900px;
+    margin: 110px auto 60px;
+    padding: 0 18px 40px;
+    box-sizing: border-box;
+}
+
+.comentarios-title {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1.9rem;
+    text-align: center;
+    color: #ffcc00;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+.comentarios-subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+
+/* LISTA DE COMENTÁRIOS */
+
+.comentarios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.comment-card {
+    background: #111;
+    border-radius: 10px;
+    padding: 14px 16px 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+    border: 1px solid #333;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.comment-name {
+    font-weight: 700;
+    font-size: 0.98rem;
+}
+
+.comment-stars i {
+    color: #ffcc00;
+    font-size: 0.85rem;
+}
+
+.comment-text {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin: 6px 0 4px;
+}
+
+.comment-date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+/* FORMULÁRIO DE COMENTÁRIO */
+
+.comentario-form-section {
+    border-top: 1px solid #222;
+    padding-top: 24px;
+}
+
+.comentario-form-title {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1.3rem;
+    color: #ffcc00;
+    margin-bottom: 16px;
+}
+
+.comentario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.form-group input,
+.form-group textarea {
+    background: #050505;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.4);
+}
+
+/* rating fake visual */
+.form-rating .rating-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.form-rating .rating-options span {
+    border-radius: 4px;
+    padding: 4px 8px;
+    border: 1px solid #444;
+    cursor: default;
+}
+
+.btn-enviar {
+    margin-top: 6px;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    align-self: flex-start;
+    background: #ffcc00;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s ease;
+}
+
+.btn-enviar i {
+    font-size: 0.9rem;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+.form-info {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 8px;
+}
+
+.rating-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.rating-options span {
+    border-radius: 4px;
+    padding: 4px 8px;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.rating-options span:hover {
+    border-color: #ffcc00;
+    background: #151515;
+}
+
+.rating-options span.selected {
+    border-color: #ffcc00;
+    background: #222;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.6);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer-comentarios {
+    border-top: 1px solid #222;
+    text-align: center;
+    padding: 18px 10px 22px;
+    font-size: 0.85rem;
+    color: #aaa;
+    background: #050505;
+}
+
+.footer-copy {
+    letter-spacing: 0.5px;
+}
+
+/* Animação suave de entrada nos comentários */
+.comment-card {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MODAL DE CONFIRMAÇÃO
+   ========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;                /* começa escondido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-box {
+  background: #111;
+  border-radius: 12px;
+  padding: 20px 22px 18px;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.85);
+  border: 1px solid #333;
+  position: relative;
+  text-align: left;
+  animation: modalFadeUp 0.25s ease-out;
+}
+
+.modal-title {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin: 0 0 8px;
+}
+
+.modal-text {
+  font-size: 0.9rem;
+  color: #eee;
+  margin: 0 0 14px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.modal-ok {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.modal-ok:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,794 @@
+/* =================== BASE GERAL =================== */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =================== HEADER / NAV =================== */
+
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+/* logo */
+#logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* nav desktop */
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link,
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* linha amarela racing */
+.nav-link::after,
+.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* botão hamburguer (mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffcc00;
+    border-radius: 8px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+/* animação do X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* =================== BANNER =================== */
+
+/* base mobile */
+#banner {
+    width: 100%;
+    height: 360px;
+    background-image: url("./banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+/* overlay suave */
+#banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+    );
+    z-index: 1;
+}
+
+/* conteúdo interno */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* texto do banner */
+.banner-description {
+    color: #ffe066;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(255, 255, 100, 0.6);
+}
+
+/* botão do banner – escondido no mobile */
+.banner-btn {
+    display: none;
+    text-decoration: none;
+}
+
+/* =================== TRAILER (MOBILE + DESKTOP) =================== */
+
+/* containers compartilhados */
+#trailer-container,
+#trailer-container-desktop {
+    width: 100%;
+    padding: 0 16px 32px;
+    box-sizing: border-box;
+    margin-left: 40px;
+}
+
+/* cartão central */
+#trailer-container .content,
+#trailer-container-desktop .content {
+    max-width: 480px;
+    margin: 0 auto ;
+    margin-top: 24px; /* invade um pouco o banner só no mobile */
+    background: #050505;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+    border: 1px solid #262626;
+}
+
+/* visibilidade das versões */
+.trailer-mobile {
+    display: block;
+}
+
+.trailer-desktop {
+    display: none;
+}
+
+/* vídeo */
+.trailer {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* texto da sinopse */
+#sinopse,
+#sinopse-desktop {
+    margin-top: 16px;
+    text-align: left;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    border-left: 3px solid #ffcc00;
+    padding-left: 10px;
+    margin: 0;
+}
+
+/* BOTÃO WHATSAPP (trailer e outros lugares) */
+.button {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    background-image: linear-gradient(120deg, #d21617, #ff6a00, #d21617);
+    background-size: 200% 200%;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px solid #ff6a00;
+    outline: none;
+    margin: 25px auto 0;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(255, 106, 0, 0.35), 0 8px 22px rgba(0, 0, 0, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.5s ease;
+    animation: gradientShift 5s ease infinite;
+    text-decoration: none;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.25), transparent 35%);
+    border-radius: inherit;
+    opacity: 0;
+    transform: translateX(-30%) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.button:hover {
+    color: #fff;
+    background-position: right center;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 18px rgba(255, 106, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.button:hover::before {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button:focus-visible {
+    outline: 2px solid #ff6a00;
+    outline-offset: 3px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* telas muito pequenas */
+@media (max-width: 380px) {
+    #trailer-container .content {
+        margin-top: -30px;
+        padding: 12px;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+}
+
+/* =================== CARDS =================== */
+
+.actor-cards-container {
+    width: 100%;
+    padding: 20px 0 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.cards-content {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 16px;
+    margin-left: 40px;
+    margin-right: -40px;
+}
+
+/* CARD RACING */
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffe066;
+    padding: 26px 20px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid #262626;
+    overflow: hidden;
+
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.2);
+    outline: 1px solid rgba(255, 204, 0, 0.15);
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    z-index: 2;
+    text-shadow: 0 0 8px rgba(255, 255, 150, 0.8);
+}
+
+.card-title {
+    position: relative;
+    z-index: 2;
+    font-size: 1.8rem;
+}
+
+/* imagem entra pela pseudo ::before */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 0;
+}
+
+/* overlay escuro */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.1), rgba(0,0,0,0.45));
+    z-index: 1;
+}
+
+/* imagens dos cards */
+.banner-1::before {
+    background-image: url('https://www.bigtires.com.br/media/blog/cache/1100x/magefan_blog/pintura-de-carro-cover.png');
+}
+.banner-2::before {
+    background-image: url('http://www.funilariaepinturasorocaba.com.br/funilaria/imagens/reparacao-automotiva-3m.jpg');
+}
+.banner-3::before {
+    background-image: url('https://99app.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fx9sul3ikm35w%2F1W9PkwPySY3zUomH8pJKF1%2F0e7d772bd4d425153eb1417d78cb5344%2Flixamento-polimento-carro-oficina__1_.jpeg&w=1920&q=75');
+}
+
+/* hover */
+.card:hover::before,
+.card:active::before,
+.card:focus-within::before {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.35);
+    text-shadow: 0 0 12px rgba(255, 255, 170, 1);
+}
+
+/* =================== FOOTER =================== */
+
+.site-footer {
+    border-top: 1px solid #222;
+    padding: 20px 16px 30px;
+    background: #000;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto 12px;
+}
+
+#footer-logo {
+    height: 40px;
+    width: auto;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-navigation {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-list a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
+}
+
+/* =================== NAV MOBILE =================== */
+
+@media (max-width: 768px) {
+
+    .top-header {
+        height: 60px;
+        padding: 0 8px;
+        overflow: hidden;
+    }
+
+    #logo {
+        height: 38px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #000;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+        display: none;
+        width: 100vw;
+        flex: none;
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 18px 16px 24px;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 1.05rem;
+    }
+}
+
+/* telas bem pequenas tipo iPhone SE */
+@media (max-width: 400px) {
+    .top-header {
+        padding: 0 6px;
+        position: fixed;
+    }
+
+    #logo {
+        height: 34px;
+    }
+
+    .menu-toggle {
+        width: 26px;
+        height: 26px;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+    }
+}
+
+/* =================== TABLET =================== */
+
+@media (max-width: 1024px) {
+    #banner {
+        height: 420px;
+        padding: 0 40px;
+    }
+
+    .banner-description {
+        font-size: 1.5rem;
+    }
+}
+
+/* =================== DESKTOP AGRESSIVO (≥1200px) =================== */
+
+@media (min-width: 1200px) {
+
+    body {
+        background: radial-gradient(circle at top, #111 0, #000 45%, #000 100%);
+    }
+
+    .top-header {
+        height: 80px;
+    }
+
+    .nav-inner {
+        max-width: 1200px;
+        padding: 0 32px;
+    }
+
+    #logo {
+        height: 60px;
+    }
+
+    .main-nav ul {
+        gap: 40px;
+    }
+
+    .nav-link {
+        font-size: 1.05rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* banner maior e alinhado à direita */
+    #banner {
+        height: 650px;
+        padding: 0 120px;
+        justify-content: flex-end;
+    }
+
+    .banner-content {
+        max-width: 420px;
+        text-align: right;
+        align-items: flex-end;
+    }
+
+    .banner-description {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: #ffd400;
+        margin-bottom: 28px;
+        position: relative;
+        right: 40%;
+    }
+
+    /* botão do banner visível só no desktop */
+    .banner-btn {
+        display: inline-block;
+        padding: 18px 38px;
+        font-size: 1.4rem;
+        background: linear-gradient(90deg, #ff4e00, #ff8e00);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: bold;
+        box-shadow: 0px 0px 18px rgba(255,94,0,0.4);
+        transition: 0.25s ease-out;
+        position: relative;
+        right: 50%;
+    }
+
+    .banner-btn:hover {
+        transform: scale(1.06);
+        box-shadow: 0px 0px 24px rgba(255,94,0,0.6);
+    }
+
+    /* TRAILER – versão desktop (sem vídeo, só texto + botão) */
+    .trailer-mobile {
+        display: none;
+    }
+
+    .trailer-desktop {
+        display: block;
+    }
+
+    #trailer-container-desktop {
+        padding: 0 32px 56px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #trailer-container-desktop .content {
+        max-width: 900px;
+        margin: 40px auto 40px;   /* NÃO invade o banner */
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        background: #050505;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+        border: 1px solid #262626;
+    }
+
+    #trailer-container-desktop .trailer {
+        display: none;            /* vídeo oculto no desktop */
+    }
+
+    #sinopse-desktop {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 0;
+        text-align: left;
+    }
+
+    #sinopse-desktop .button {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+
+    .sinopse-mobile {
+        display: none;
+    }
+
+    /* CARDS EM 3 COLUNAS */
+    .actor-cards-container {
+        padding: 40px 0 80px;
+    }
+
+    .cards-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .card {
+        flex: 1;
+        height: 210px;
+        font-size: 25px;
+    }
+
+    .site-footer {
+        padding: 28px 32px 40px;
+    }
+
+    .footer-main,
+    .footer-navigation {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* AJUSTE DO CARD NO DESKTOP (≥1200px) */
+@media (min-width: 1200px) {
+
+    /* container do trailer desktop */
+    #trailer-container-desktop {
+        padding: 0 32px 80px;      /* mais espaço embaixo */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* card mais estreito e centralizado, sem colar no banner */
+    #trailer-container-desktop .content {
+        max-width: 720px;          /* antes 900px */
+        margin: 70px auto 40px;    /* afasta do banner */
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        background: #050505;
+        border-radius: 16px;
+        padding: 28px 32px;
+        box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+        border: 1px solid #262626;
+        align-items: center;       /* centraliza conteúdo */
+        text-align: center;        /* texto centralizado */
+    }
+
+    /* continua SEM vídeo no desktop */
+    #trailer-container-desktop .trailer {
+        display: none;
+    }
+
+    #sinopse-desktop {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 0;
+        text-align: center;
+    }
+
+    #sinopse-desktop .description {
+        text-align: center;
+    }
+
+    #sinopse-desktop .button {
+        align-self: center;        /* botão logo abaixo do texto, centralizado */
+        margin-top: 12px;
+    }
+}
+
+/* =================== TELAS MUITO LARGAS (≥1440px) =================== */
+
+@media (min-width: 1440px) {
+    #banner {
+        height: 70vh;
+        background-position: center right;
+    }
+}
+
+/* ===== FOOTER INSTAGRAM ===== */
+.footer-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-instagram:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.footer-instagram-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.5));
+}

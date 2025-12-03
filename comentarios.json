@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "João Silva",
+    "nota": 4.5,
+    "texto": "Serviço excelente! Levei meu carro amassado e recebi como se tivesse saído da concessionária.",
+    "data": "10/11/2025"
+  },
+  {
+    "nome": "Maria Souza",
+    "nota": 4,
+    "texto": "Pintura perfeita e prazo cumprido certinho. Recomendo para quem é exigente com o carro.",
+    "data": "02/11/2025"
+  },
+  {
+    "nome": "Carlos Pereira",
+    "nota": 3.5,
+    "texto": "Atendimento muito bom e explicaram tudo que seria feito. Voltarei para próximos serviços.",
+    "data": "25/10/2025"
+  },
+  {
+    "nome": "Ana Paula",
+    "nota": 5,
+    "texto": "Meu carro ficou impecável! A oficina está de parabéns pelo profissionalismo.",
+    "data": "17/11/2025"
+  },
+  {
+    "nome": "Roberto Almeida",
+    "nota": 4,
+    "texto": "Ótimo acabamento e rapidez no serviço.",
+    "data": "05/11/2025"
+  }
+]

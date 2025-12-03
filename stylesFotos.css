@@ -1,0 +1,506 @@
+/* ============================================================
+   GOOGLE FONT
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+
+/* ============================================================
+   BASE DO SITE
+   ============================================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+/* logo */
+#logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* nav desktop */
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link,
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* linha amarela racing */
+.nav-link::after,
+.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* botão hamburguer (mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffcc00;
+    border-radius: 8px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+/* animação do X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ============================================================
+   NAV MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .top-header {
+        height: 60px;
+        padding: 0 8px;
+        overflow: hidden;
+    }
+
+    #logo {
+        height: 38px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #000;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+        display: none;
+        width: 100vw;
+        flex: none;
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 18px 16px 24px;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .top-header {
+        padding: 0 6px;
+    }
+
+    #logo {
+        height: 34px;
+    }
+
+    .menu-toggle {
+        width: 26px;
+        height: 26px;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+    }
+}
+
+
+/* ============================================================
+   DESKTOP > 1200px
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    body {
+        background: radial-gradient(circle at top, #111 0, #000 45%, #000 100%);
+    }
+
+    .top-header {
+        height: 80px;
+    }
+
+    .nav-inner {
+        max-width: 1200px;
+        padding: 0 32px;
+    }
+
+    #logo {
+        height: 60px;
+    }
+
+    .main-nav ul {
+        gap: 40px;
+    }
+
+    .nav-link {
+        font-size: 1.05rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* ============================================================
+   GALERIA DE FOTOS
+   ============================================================ */
+
+.galeria-container {
+    max-width: 1100px;
+    margin: 120px auto 60px;
+    padding: 0 18px;
+    text-align: center;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.galeria-title {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+/* GRID */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 18px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+/* ================================
+   BOTÕES DE FILTRO
+   ================================ */
+
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.filtro-btn {
+    background: #111;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.filtro-btn:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.filtro-btn.active {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: #ffcc00;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .galeria-title {
+        font-size: 1.4rem;
+    }
+
+    .galeria-grid img {
+        height: 130px;
+    }
+
+    .close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* animação ao filtrar */
+.galeria-grid img {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.galeria-grid img.filtro-hide {
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+}
+
+/* =====================================
+   FOOTER — COM ANIMAÇÃO E BRILHO
+   ===================================== */
+
+.footer-marlon {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+
+  color: #ffcc00;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+
+  background: url('./footer.png') center/cover no-repeat;
+  /* tira o fixed aqui para não quebrar em algumas telas */
+  background-attachment: scroll;
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: footerEnter 0.9s ease-out forwards;
+}
+
+.footer-marlon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.footer-marlon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #ffcc00;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+  z-index: 3;
+}
+
+.footer-copy {
+  position: relative;
+  z-index: 4;
+  animation: pulseLight 3.5s ease-in-out infinite;
+}
+
+/* MOBILE (até 768px) */
+@media (max-width: 768px) {
+  .footer-marlon {
+    padding: 30px 16px;
+    font-size: 0.9rem;
+    background-position: center right;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+
+/* DESKTOP (≥ 769px) */
+@media (min-width: 769px) {
+  .footer-marlon {
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    background-position: center;
+    /* mantém sempre cover para não “partir” a imagem */
+    background-size: cover;
+    background-attachment: fixed; /* se quiser o efeito fixo só no desktop */
+    position: fixed;
+    bottom: 0;
+}
+}
+
+/* TELAS MUITO GRANDES (≥ 1200px) */
+@media (min-width: 1200px) {
+  .footer-marlon {
+    padding: 80px 20px;
+    font-size: 1.2rem;
+    background-size: cover; /* continua cover */
+  }
+}
+
+/* fade-in + slide-up */
+@keyframes footerEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* leve pulsação racing */
+@keyframes pulseLight {
+  0% {
+    text-shadow: 0 0 0px #ffcc00;
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 8px #ffcc00;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 0px #ffcc00;
+    opacity: 0.9;
+  }
+}
